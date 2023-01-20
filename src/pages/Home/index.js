@@ -23,7 +23,19 @@ function Home() {
 
         loadFilmes();
     }, [])
-    
+    return (
+        <div className='container'> 
+            <div className='lista-filmes'>
+                {filmes.map((filme) => {
+                    return(
+                        <article key={filme.id}>
+                            <strong>{filme.title}</strong>
+                        </article>
+                    )
+                })}
+            </div>
+        </div>
+    )
 }
 
 export default Home;
