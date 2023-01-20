@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import api from '../../services/api'
+import { Link } from 'react-router-dom'
  // URL DA API: https://api.themoviedb.org/3/movie/now_playing?api_key=cd5402cb28c96319d1c616da9c152817&language=pt-BR
 
 
@@ -31,6 +32,7 @@ function Home() {
                         <article key={filme.id}>
                             <strong>{filme.title}</strong>
                             <img src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} alt={filme.title}/>
+                            <Link to={`/filme/${filme.id}`}>Acessar</Link>
                         </article>
                     )
                 })}
